@@ -1,2 +1,2 @@
 # spacehunter
-C++ and SFML Game
+C++ SFML Game
