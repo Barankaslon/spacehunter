@@ -5,7 +5,9 @@ int main()
 
 	RenderWindow window(VideoMode(800, 600), "Space Hunter Game", Style::Default);
 
-	window.setFramerateLimit(60);
+	
+
+	Game game(&window);
 
 	//Game Loop
 
@@ -19,6 +21,10 @@ int main()
 			if (event.type == Event::KeyPressed && event.key.code == Keyboard::Escape)
 				window.close();
 		}
+
+
+		game.Update();
+		game.Draw();
 	}
 
 	return 0;

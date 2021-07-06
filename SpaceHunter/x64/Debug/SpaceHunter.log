@@ -1,2 +1,5 @@
-﻿  main.cpp
+﻿  Game.cpp
+  Player.cpp
+  main.cpp
+  Generating Code...
   SpaceHunter.vcxproj -> D:\cpp-games\space-hunter\SpaceHunter\SpaceHunter\x64\Debug\SpaceHunter.exe
