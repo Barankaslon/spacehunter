@@ -3,7 +3,7 @@
 int main()
 {
 
-	RenderWindow window(VideoMode(800, 600), "Space Hunter Game", Style::Default);
+	RenderWindow window(VideoMode(1920, 1080), "Space Hunter Game", Style::Default);
 
 	
 

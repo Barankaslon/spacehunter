@@ -14,6 +14,8 @@ Player::Player(Texture* texture,
 	this->texture = texture;
 	this->sprite.setTexture(*this->texture);
 
+	this->sprite.setScale(0.1f, 0.1f);
+
 	this->controls[controls::UP] = UP;
 	this->controls[controls::DOWN] = DOWN;
 	this->controls[controls::LEFT] = LEFT;
