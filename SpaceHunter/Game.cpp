@@ -3,29 +3,37 @@
 Game::Game(RenderWindow* window)
 {
 	this->window = window;
-	window->setFramerateLimit(60);
+	this->window->setFramerateLimit(60);
 
 	//Init textures
-	playerTexture.loadFromFile("Textures/ship.png");
+	this->playerTexture.loadFromFile("Textures/ship.png");
 
 	//Init Player
-	player = new Player(&this->playerTexture);
+
+	this->players.push_back(Player(&playerTexture));
 }
 
 Game::~Game()
 {
-	delete player;
+
 }
 
 void Game::Update()
 {
-	player->Update();
+	for (size_t i = 0; i < players.size(); i++)
+	{
+		this->players[i].Update();
+	}
+
 }
 void Game::Draw()
 {
-	window->clear();
+	this->window->clear();
 
-	player->Draw(*window);
+	for (size_t i = 0; i < this->players.size(); i++)
+	{
+		players[i].Draw(*this->window);
+	}
 
-	window->display();
+	this->window->display();
 }

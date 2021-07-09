@@ -1,4 +1,7 @@
 #include "Player.h"
+
+unsigned Player::players = 0;
+
 enum controls {UP = 0, DOWN, LEFT , RIGHT, SHOOT};
 
 
@@ -14,7 +17,7 @@ Player::Player(Texture* texture,
 	this->texture = texture;
 	this->sprite.setTexture(*this->texture);
 
-	this->sprite.setScale(0.1f, 0.1f);
+	this->sprite.setScale(0.13f, 0.13f);
 
 	this->controls[controls::UP] = UP;
 	this->controls[controls::DOWN] = DOWN;
@@ -22,7 +25,8 @@ Player::Player(Texture* texture,
 	this->controls[controls::RIGHT] = RIGHT;
 	this->controls[controls::SHOOT] = SHOOT;
 
-
+	this->playerNumber = Player::players;
+	Player::players++;
 }
 
 Player::~Player()
@@ -33,15 +37,17 @@ Player::~Player()
 void Player::Movement()
 {
 	if (Keyboard::isKeyPressed(Keyboard::Key(this->controls[controls::UP])))
-		std::cout << "W" << "\n";
+		this->sprite.move(0.f, -10.f);
 	if (Keyboard::isKeyPressed(Keyboard::Key(this->controls[controls::DOWN])))
-		std::cout << "S" << "\n";
+		this->sprite.move(0.f, 10.f);
 	if (Keyboard::isKeyPressed(Keyboard::Key(this->controls[controls::LEFT])))
-		std::cout << "A" << "\n";
+		this->sprite.move(-10.f, 0.f);
 	if (Keyboard::isKeyPressed(Keyboard::Key(this->controls[controls::RIGHT])))
-		std::cout << "D" << "\n";
+		this->sprite.move(10.f, 0.f);
 	if (Keyboard::isKeyPressed(Keyboard::Key(this->controls[controls::SHOOT])))
-		std::cout << "SPACE" << "\n";
+	{
+
+	}
 }
 
 void Player::Update()

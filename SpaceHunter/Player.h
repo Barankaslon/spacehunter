@@ -4,6 +4,7 @@
 #include "SFML/System.hpp"
 #include "SFML/Audio.hpp"
 #include <iostream>
+#include <vector>
 
 using namespace sf;
 
@@ -11,6 +12,7 @@ class Player
 {
 
 private:
+	unsigned playerNumber;
 	Texture *texture;
 	Sprite sprite;
 	RectangleShape hitBox;
@@ -39,5 +41,8 @@ public:
 	void Movement();
 	void Update();
 	void Draw(RenderTarget &target);
+
+	//Statics
+	static unsigned players;
 };
 
